@@ -1,5 +1,3 @@
-// sections/NavBar.ts
-
 import { expect, type Locator, type Page } from '@playwright/test';
 
 export class NavBar {
