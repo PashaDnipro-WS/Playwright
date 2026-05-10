@@ -7,4 +7,5 @@ export const urls = {
   activity: '/projects/redmine/activity',
   repository: '/projects/redmine/repository',
   statistics: '/projects/redmine/repository/statistics',
+  twoFactorConfirmation: '/account/twofa/confirm',
 };
