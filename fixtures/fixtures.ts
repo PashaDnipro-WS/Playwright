@@ -7,7 +7,7 @@ import { ActivityPage } from '../pages/ActivityPage';
 import { RepositoryPage } from '../pages/RepositoryPage';
 import { StatisticsPage } from '../pages/StatisticsPage';
 
-import { loginAsValidUser } from '../utils/auth';
+import { expectUserIsLoggedIn } from '../utils/auth';
 
 type Fixtures = {
     loginPage: LoginPage;
@@ -46,7 +46,7 @@ export const test = base.extend<Fixtures>({
     },
 
     authenticatedPage: async ({ page }, use) => {
-        await loginAsValidUser(page);
+        await expectUserIsLoggedIn(page);
 
         await use();
     },
