@@ -1,2 +1,2 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","3728","user can submit registration form","chromium","2026-05-10","passed","2026-05-10","","redmine.spec.ts","",""
+"","3083","user can submit registration form","chromium","2026-05-10","passed","2026-05-10","","redmine.spec.ts","",""
