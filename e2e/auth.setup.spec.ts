@@ -1,11 +1,15 @@
-import { test as setup } from '@playwright/test';
+import { test, expect } from '../fixtures/fixtures';
 
-import { loginAsValidUser } from '../utils/auth';
+test.use({
+    storageState: 'playwright/.auth/user.json',
+});
 
-setup('authenticate user', async ({ page }) => {
-    await loginAsValidUser(page);
+test('@auth user can open account page with saved session', async ({
+    accountPage,
+}) => {
+    await accountPage.goto();
 
-    await page.context().storageState({
-        path: 'playwright/.auth/user.json',
-    });
+    await accountPage.expectOpened();
+
+    await expect(accountPage.header.signOutLink).toBeVisible();
 });

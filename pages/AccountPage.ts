@@ -16,9 +16,7 @@ export class AccountPage {
     constructor(private page: Page) {
         this.header = new Header(page);
 
-        this.heading = page.getByRole('heading', {
-            name: 'My account',
-        });
+        this.heading = page.locator('h2');
 
         this.firstNameInput = page.getByRole('textbox', {
             name: 'First name *',
