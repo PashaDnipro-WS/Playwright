@@ -130,15 +130,13 @@ npx playwright test --ui
 
 # CI Pipeline
 
-GitHub Actions pipeline performs the following steps:
-
 Because Redmine requires 2FA authentication, CI executes only public tests:
 
 ```bash
 npx playwright test --grep-invert "@setup|@login|@auth"
 ```
 
-Authenticated and login tests are intended for local execution.
+>Authenticated and login tests are intended for local execution.
 
 ---
 
@@ -149,7 +147,7 @@ The Allure report is automatically published through GitHub Pages.
 ## Report Link
 
 ```txt
-https://pashadnipro-ws.github.io/Playwright/
+[allure-report](https://pashadnipro-ws.github.io/Playwright/)
 ```
 
 ---
