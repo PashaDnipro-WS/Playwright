@@ -25,9 +25,7 @@ export class RevisionsTable {
       name: 'View all revisions'
     });
 
-    this.revisionLinks = this.table.getByRole('link', {
-      name: /^\d+$/,
-    });
+    this.revisionLinks = this.table.locator('tr td:first-child a');
 
     this.fromRadios = this.table.locator('input[name="rev"]');
     this.toRadios = this.table.locator('input[name="rev_to"]');
@@ -63,17 +61,27 @@ export class RevisionsTable {
     await this.showAllRevisionsLink.click();
   }
 
+  getRandomIndex(max: number, exclude?: number) {
+    let index = Math.floor(Math.random() * max);
+
+    while (index === exclude) {
+      index = Math.floor(Math.random() * max);
+    }
+
+    return index;
+  }
+
   async selectRandomRevisionsToCompare(): Promise<SelectedRevisions> {
-    const count = await this.revisionLinks.count();
+    const count = await this.fromRadios.count();
 
-    const firstIndex = Math.floor(Math.random() * Math.min(count - 1, 10));
-    const secondIndex = firstIndex + 1;
-
-    const rev = await this.revisionLinks.nth(firstIndex).innerText();
-    const revTo = await this.revisionLinks.nth(secondIndex).innerText();
+    const firstIndex = this.getRandomIndex(count);
+    const secondIndex = this.getRandomIndex(count, firstIndex);
 
     await this.fromRadios.nth(firstIndex).check();
     await this.toRadios.nth(secondIndex).check();
+
+    const rev = await this.fromRadios.nth(firstIndex).inputValue();
+    const revTo = await this.toRadios.nth(secondIndex).inputValue();
 
     return {
       rev: rev.trim(),

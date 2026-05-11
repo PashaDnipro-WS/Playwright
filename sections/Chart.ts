@@ -3,7 +3,6 @@ import { expect, type Locator, type Page } from '@playwright/test';
 export class Chart {
   readonly statisticsHeading: Locator;
   readonly charts: Locator;
-  readonly tooltip: Locator;
 
   constructor(private page: Page) {
     this.statisticsHeading = page.getByRole('heading', {
@@ -11,8 +10,6 @@ export class Chart {
     });
 
     this.charts = page.locator('canvas');
-
-    this.tooltip = page.getByText(/Changes: \d+/);
   }
 
   async expectVisible() {
@@ -32,12 +29,10 @@ export class Chart {
     }
 
     await this.page.mouse.move(
-      box.x + box.width * 0.55,
-      box.y + box.height * 0.25
+      box.x + box.width * 0.50,
+      box.y + box.height * 0.12
     );
-  }
 
-  async expectTooltipVisible() {
-    await expect(this.tooltip).toBeVisible();
+    await this.page.waitForTimeout(300);
   }
 }

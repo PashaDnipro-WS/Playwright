@@ -46,6 +46,11 @@ export class RepositoryPage {
         ).toBeVisible();
     }
 
+    async expectComparedRevisions(rev: string, revTo: string) {
+        await expect(this.page).toHaveURL(new RegExp(`rev=${rev}`));
+        await expect(this.page).toHaveURL(new RegExp(`rev_to=${revTo}`));
+    }
+
     async openStatistics() {
         await this.statisticsLink.click();
     }

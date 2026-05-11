@@ -6,6 +6,6 @@ export const urls = {
   myPage: '/my/page',
   activity: '/projects/redmine/activity',
   repository: '/projects/redmine/repository',
-  statistics: '/projects/redmine/repository/statistics',
+  statistics: '/projects/redmine/repository/svn/statistics',
   twoFactorConfirmation: '/account/twofa/confirm',
 };

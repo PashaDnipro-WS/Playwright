@@ -71,7 +71,7 @@ test('user is redirected to login page when opening statistics', async ({
     await loginPage.expectOpened();
 });
 
-test.only('user can open repository author page and see selected author', async ({
+test('user can open repository author page and see selected author', async ({
     repositoryPage,
     page,
 }) => {
