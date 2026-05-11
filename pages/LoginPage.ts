@@ -41,8 +41,8 @@ export class LoginPage {
     await expect(this.loginButton).toBeVisible();
   }
 
-  async login(username: string, password: string) {
-    await this.loginInput.fill(username);
+  async login(login: string, password: string) {
+    await this.loginInput.fill(login);
 
     await this.passwordInput.fill(password);
 
