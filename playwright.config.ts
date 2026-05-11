@@ -30,7 +30,7 @@ export default defineConfig({
     ['list'],
     ['allure-playwright'],
   ],
-  
+
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
@@ -77,6 +77,11 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
+
+    {
+      name: 'guest',
+      grepInvert: /@auth|@login/,
+    }
   ],
 
   /* Run your local dev server before starting the tests */

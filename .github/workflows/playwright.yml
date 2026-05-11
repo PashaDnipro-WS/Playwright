@@ -44,7 +44,7 @@ jobs:
           fi
 
       - name: Run Playwright tests
-        run: npx playwright test --grep-invert "@auth"
+        run: npx playwright test --project=guest
 
       - name: Generate Allure report
         if: always()

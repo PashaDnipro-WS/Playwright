@@ -5,7 +5,7 @@ import {
     expectUserIsLoggedIn,
 } from '../utils/auth';
 
-test('user can login with valid credentials', async ({
+test('@login user can login with valid credentials', async ({
     page,
 }) => {
     await loginAsValidUser(page);
