@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","6237","user can filter activity by date, user and issue type","chromium","2026-05-11","passed","2026-05-11","","public-user-flow.spec.ts","",""
+"","4452","user is redirected to login page when opening statistics","chromium","2026-05-11","passed","2026-05-11","","public-user-flow.spec.ts","",""
+"","4536","user can search repository revision","chromium","2026-05-11","passed","2026-05-11","","public-user-flow.spec.ts","",""
+"","6184","user can submit registration form","chromium","2026-05-11","passed","2026-05-11","","public-user-flow.spec.ts","",""
+"","4786","user can open repository author page and see selected author","chromium","2026-05-11","passed","2026-05-11","","public-user-flow.spec.ts","",""
