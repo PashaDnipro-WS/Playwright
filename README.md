@@ -146,8 +146,6 @@ The Allure report is automatically published through GitHub Pages.
 
 ## Report Link
 
-```txt
 [allure-report](https://pashadnipro-ws.github.io/Playwright/)
-```
 
 ---
