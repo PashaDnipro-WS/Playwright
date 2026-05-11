@@ -48,4 +48,16 @@ export class ActivityPage {
     async openNextActivityPage() {
         await this.nextLink.click();
     }
+
+    // dynamic locator
+
+    defectLink(defectId: string) {
+        return this.page.getByRole('link', {
+            name: new RegExp(`Defect #${defectId}`),
+        });
+    }
+
+    async expectDefectVisible(defectId: string) {
+        await expect(this.defectLink(defectId)).toBeVisible();
+    }
 }
