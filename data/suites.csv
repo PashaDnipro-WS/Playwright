@@ -1,4 +1,4 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","4708","user can submit registration form","firefox","2026-05-11","passed","2026-05-11","","public-user-flow.spec.ts","",""
-"","4728","user can submit registration form","chromium","2026-05-11","passed","2026-05-11","","public-user-flow.spec.ts","",""
-"","8671","user can submit registration form","webkit","2026-05-11","passed","2026-05-11","","public-user-flow.spec.ts","",""
+"","5163","user can submit registration form","chromium","2026-05-11","passed","2026-05-11","","public-user-flow.spec.ts","",""
+"","2743","user can search repository revision","chromium","2026-05-11","passed","2026-05-11","","public-user-flow.spec.ts","",""
+"","3410","user can filter activity by date, user and issue type","chromium","2026-05-11","passed","2026-05-11","","public-user-flow.spec.ts","",""
