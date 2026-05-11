@@ -12,6 +12,7 @@ export class RevisionsTable {
   readonly revisionLinks: Locator;
   readonly fromRadios: Locator;
   readonly toRadios: Locator;
+  readonly authorLinks: Locator;
 
   constructor(private page: Page) {
     this.table = page.getByRole('table').last();
@@ -30,6 +31,7 @@ export class RevisionsTable {
 
     this.fromRadios = this.table.locator('input[name="rev"]');
     this.toRadios = this.table.locator('input[name="rev_to"]');
+    this.authorLinks = this.table.locator('a[href*="/users/"]');
   }
 
   async expectRevisionVisible(revision: string) {
@@ -38,6 +40,16 @@ export class RevisionsTable {
         hasText: revision,
       })
     ).toBeVisible();
+  }
+
+  async getFirstAuthorName() {
+    return (
+      await this.authorLinks.first().innerText()
+    ).trim();
+  }
+
+  async openFirstAuthor() {
+    await this.authorLinks.first().click();
   }
 
   // distinguish auth || public methods?

@@ -70,3 +70,18 @@ test('user is redirected to login page when opening statistics', async ({
 
     await loginPage.expectOpened();
 });
+
+test.only('user can open repository author page and see selected author', async ({
+    repositoryPage,
+    page,
+}) => {
+    await repositoryPage.goto();
+
+    await repositoryPage.expectOpened();
+
+    const authorName = await repositoryPage.revisionsTable.getFirstAuthorName();
+
+    await repositoryPage.revisionsTable.openFirstAuthor();
+
+    await expect(page.getByRole('heading', { name: authorName, })).toBeVisible();
+});
