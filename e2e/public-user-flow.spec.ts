@@ -54,3 +54,19 @@ test('user can filter activity by date, user and issue type', async ({
 
     await activityPage.expectDefectVisible('42997');
 });
+
+test('user is redirected to login page when opening statistics', async ({
+    repositoryPage,
+    loginPage,
+    page,
+}) => {
+    await repositoryPage.goto();
+
+    await repositoryPage.expectOpened();
+
+    await repositoryPage.openStatistics();
+
+    await expect(page).toHaveURL(/login/);
+
+    await loginPage.expectOpened();
+});
