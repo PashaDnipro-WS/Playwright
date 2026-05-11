@@ -2,7 +2,7 @@ import { test, expect } from '../fixtures/fixtures';
 
 import { generateRegisterUser } from '../data/users';
 
-test('user can submit registration form', async ({
+test('user can submit registration form with valid data', async ({
     registerPage,
 }) => {
     const user = generateRegisterUser();
