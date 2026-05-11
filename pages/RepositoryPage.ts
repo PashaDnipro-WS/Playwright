@@ -38,6 +38,14 @@ export class RepositoryPage {
         await this.revisionsTable.expectVisible();
     }
 
+    async expectRevisionOpened(revision: string) {
+        await expect(
+            this.page.getByRole('heading', {
+                name: `svn @ ${revision}`,
+            })
+        ).toBeVisible();
+    }
+
     async openStatistics() {
         await this.statisticsLink.click();
     }

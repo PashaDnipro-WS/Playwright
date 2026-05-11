@@ -32,10 +32,19 @@ export class RevisionsTable {
     this.toRadios = this.table.locator('input[name="rev_to"]');
   }
 
+  async expectRevisionVisible(revision: string) {
+    await expect(
+      this.revisionLinks.filter({
+        hasText: revision,
+      })
+    ).toBeVisible();
+  }
+
+  // distinguish auth || public methods?
+
   async expectVisible() {
     await expect(this.table).toBeVisible();
     await expect(this.revisionLinks.first()).toBeVisible();
-    await expect(this.compareButtons.last()).toBeVisible();
   }
 
   async openAllRevisions() {
